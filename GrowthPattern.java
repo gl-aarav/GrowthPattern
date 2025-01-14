@@ -31,11 +31,12 @@ public class GrowthPattern
 	{
 		System.out.println("\n\n\n");
 		int i = 0;
-		for (i = height[i]+5; i<height.length; i++)
+		for (i = 0; i<height.length; i++)
 		{
-			if (i!=0)
-				decideSymbols(i);
-			printSymbols(i);
+
+			decideSymbols(i);
+			System.out.print("t" + (i) + "\t");
+			printSymbols(height[i]+5);
 			System.out.println("\n");
 		}
 		System.out.println("\n\n\n");
@@ -43,17 +44,24 @@ public class GrowthPattern
 
 	public void decideSymbols(int term)
 	{
-		if (height[term]>height[term-1])
-			symbol = "+";
-		else if (height[term]<height[term-1])
-			symbol = "-";
+		if (term!=0) 
+		{
+			if (height[term]>height[term-1])
+				symbol = "+";
+			else if (height[term]<height[term-1])
+				symbol = "-";
+			else
+				symbol = "o";
+		}
 		else
+		{
 			symbol = "o";
+		}
 	}
 
 	public void printSymbols(int printTimes)
 	{
-		for (int x = 1; x<=printTimes+5; x++)
+		for (int x = 1; x<=printTimes; x++)
 		{
 			System.out.print(symbol);
 		}
@@ -61,7 +69,7 @@ public class GrowthPattern
 
 	public void printRate()
 	{
-
+		System.out.printf("The rate of growth for the plant is ");
 	}
 
 }
