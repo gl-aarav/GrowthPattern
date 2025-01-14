@@ -9,44 +9,59 @@
 	Adds the height to 5
 	Prints 'o' for first time the result and no change in height
 	Prints '-' for the decreased value
-	
-*/
+
+ */
 public class GrowthPattern
 {
-	
+
 	int height[] = {-1,-3,1,2,3,4,3,4,4,6,8,6,6,7,10};
+	String symbol;
 	public GrowthPattern()
 	{
-		
+		symbol = new String ("");
 	}
-	
+
 	public static void main (String [] agrs)
 	{
 		GrowthPattern gp = new GrowthPattern();
 		gp.growIt();
 	}
-	
+
 	public void growIt()
 	{
-		for (int i = 0; i<height.length; i++)
+		System.out.println("\n\n\n");
+		int i = 0;
+		for (i = height[i]+5; i<height.length; i++)
 		{
-			height
+			if (i!=0)
+				decideSymbols(i);
+			printSymbols(i);
+			System.out.println("\n");
+		}
+		System.out.println("\n\n\n");
+	}
+
+	public void decideSymbols(int term)
+	{
+		if (height[term]>height[term-1])
+			symbol = "+";
+		else if (height[term]<height[term-1])
+			symbol = "-";
+		else
+			symbol = "o";
+	}
+
+	public void printSymbols(int printTimes)
+	{
+		for (int x = 1; x<=printTimes+5; x++)
+		{
+			System.out.print(symbol);
 		}
 	}
-	
-	public void decideSymbols()
-	{
-		
-	}
-	
-	public void printSymbols()
-	{
-		
-	}
-	
+
 	public void printRate()
 	{
-		
+
 	}
-	
+
 }
