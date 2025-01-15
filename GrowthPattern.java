@@ -14,7 +14,7 @@
 public class GrowthPattern
 {
 
-	int height[] = {-1,-3,1,2,3,4,3,4,4,6,8,6,6,7,10};
+	int height[] = {-1,-3,0,0,1,2,3,4,3,4,4,6,8,6,6,7,10};
 	private String symbol;
 	public GrowthPattern()
 	{
@@ -36,7 +36,7 @@ public class GrowthPattern
 
 			decideSymbols(i);
 			System.out.print("t" + (i) + "\t");
-			printSymbols(height[i]+5);
+			printSymbols(i);
 			System.out.println("\n");
 		}
 		printRate();
@@ -62,15 +62,34 @@ public class GrowthPattern
 
 	public void printSymbols(int printTimes)
 	{
-		for (int x = 1; x<=printTimes; x++)
+		String pattern = new String("");
+		int temp = height[printTimes];
+		int x = 0;
+		while (x!=temp)
 		{
-			System.out.print(symbol);
+			pattern = pattern + symbol;
+			if (temp>=0)
+				x++;
+			else
+				x--;
+		}
+		if (temp<0)
+		{
+			System.out.printf("%15s|", pattern);
+		}
+		else if (temp>0)
+		{
+			System.out.printf("%15s|%s","",pattern);
+		}
+		else
+		{
+			System.out.printf("%15s%s","",symbol);
 		}
 	}
 
 	public void printRate()
 	{
-		System.out.printf("The rate of growth for the plant is %.2f.", (height[height.length - 1] - height[0])/(double)height.length);
+		System.out.printf("The rate of growth for the plant is %.2f.", (height[height.length - 1] - height[0])/(double)height.length-1);
 	}
 
 }
