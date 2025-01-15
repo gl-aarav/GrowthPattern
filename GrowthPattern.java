@@ -14,7 +14,7 @@
 public class GrowthPattern
 {
 
-	int height[] = {-1,-3,0,0,1,2,3,4,3,4,4,6,8,6,6,7,10};
+	int height[] = {-1,-3,0,0,1,0,2,3,4,3,4,4,6,8,6,6,7,10};
 	private String symbol;
 	public GrowthPattern()
 	{
@@ -83,7 +83,7 @@ public class GrowthPattern
 
 	public void printRate()
 	{
-		System.out.printf("The rate of growth for the plant is %.2f.", (height[height.length - 1] - height[0])/(double)height.length-1);
+		System.out.printf("The rate of growth for the plant is %.2f per unit of time.", (height[height.length - 1] - height[0])/(double)(height.length-1));
 	}
 
 }
