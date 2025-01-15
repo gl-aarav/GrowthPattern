@@ -74,17 +74,11 @@ public class GrowthPattern
 				x--;
 		}
 		if (temp<0)
-		{
 			System.out.printf("%15s|", pattern);
-		}
 		else if (temp>0)
-		{
 			System.out.printf("%15s|%s","",pattern);
-		}
 		else
-		{
 			System.out.printf("%15s%s","",symbol);
-		}
 	}
 
 	public void printRate()
