@@ -29,7 +29,8 @@ public class GrowthPattern
 
 	public void growIt()
 	{
-		System.out.println("\n\n\n");
+		System.out.println("\nWelcome to GrowthPattern.java!\n");
+		
 		int i = 0;
 		for (i = 0; i<height.length; i++)
 		{
