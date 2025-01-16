@@ -55,9 +55,7 @@ public class GrowthPattern
 				symbol = "o";
 		}
 		else
-		{
 			symbol = "o";
-		}
 	}
 
 	public void printSymbols(int printTimes)
