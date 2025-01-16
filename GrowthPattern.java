@@ -37,7 +37,7 @@ public class GrowthPattern
 			decideSymbols(i);
 			System.out.print("t" + (i) + "\t");
 			printSymbols(i);
-			System.out.println("\n");
+			System.out.print("\n");
 		}
 		printRate();
 		System.out.println("\n\n\n");
@@ -81,7 +81,7 @@ public class GrowthPattern
 
 	public void printRate()
 	{
-		System.out.printf("The rate of growth for the plant is %.2f per unit of time.", (height[height.length - 1] - height[0])/(double)(height.length-1));
+		System.out.printf("\n\nThe rate of growth for the plant is %.2f per unit of time.", (height[height.length - 1] - height[0])/(double)(height.length-1));
 	}
 
 }
