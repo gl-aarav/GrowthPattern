@@ -59,10 +59,10 @@ public class GrowthPattern
 			symbol = "o";
 	}
 
-	public void printSymbols(int printTimes)
+	public void printSymbols(int term2)
 	{
 		String pattern = new String("");
-		int temp = height[printTimes];
+		int temp = height[term2];
 		int x = 0;
 		while (x!=temp)
 		{
